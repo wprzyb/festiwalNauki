@@ -5,7 +5,7 @@ import ddf.minim.ugens.*;
 Minim       minim;
 AudioOutput out;
 Oscil       waveA, waveB, waveC, waveD;
-PFont       data, title;
+PFont       data, title, github, letters;
 PShape      herb, hs, sensor;
 PImage      uj, krakow, hspng, mol;
 Serial      myPort;
@@ -88,7 +88,9 @@ void drawStuff()
    shape(hs, 880,5,100,100);
    textFont(title);
    text("Elektroniczna harfa ultradźwiękowa.\nFestiwal Nauki 2014", 120, 50);
-   
+   textFont(github);
+   text("Fork us on GitHub ! https://github.com/wprzyb/festiwalNauki", 120, 120);
+   textFont(letters);
    shape(sensor, 400, height-120, 100, 100);
    text("A", 440, height-20);
    shape(sensor, 550, height-120, 100, 100);
@@ -120,6 +122,7 @@ void setup()
   
   data = createFont("Cantarell-Regular-15", 10);
   title = createFont("Carlito-Italic-25", 25);
+  letters = createFont("Carlito-Italic-25", 25);
   herb = loadShape("herb.svg");
   hs = loadShape("avatar.svg");
   sensor = loadShape("sensor.svg");
@@ -127,7 +130,7 @@ void setup()
   krakow = loadImage("krakow.png");
   hspng = loadImage("avatar.png");
   mol = loadImage("mol.jpg");
-  
+  github = createFont("Cantarell-Regular-15",15);
 }
 
 void draw()
