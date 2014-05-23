@@ -22,7 +22,7 @@ int[] d = new int[SIZE];
 color red = #FF0000;
 color white = #FFFFFF;
 
-float frequencies[] = {261.6, 293.7, 329.2, 350.6};
+float frequencies[] = {261.6, 329.2, 392, 493.88};
 
 void put(int array[], int size, int val)
 {
@@ -155,10 +155,10 @@ void draw()
    background(white);
    drawStuff();
 
-   drawColumn(a,SIZE,1);
-   drawColumn(b,SIZE,2);
-   drawColumn(c,SIZE,3);
-   drawColumn(d,SIZE,4);
+   drawColumn(a,SIZE,4);
+   drawColumn(b,SIZE,3);
+   drawColumn(c,SIZE,2);
+   drawColumn(d,SIZE,1);
    
    waveA.setAmplitude( makeAmplitude(a,SIZE) );
    waveB.setAmplitude( makeAmplitude(b,SIZE) );
@@ -166,13 +166,13 @@ void draw()
    waveD.setAmplitude( makeAmplitude(d,SIZE) );
    
    tint(100,0,100,100-100*(avg(a,SIZE)/60));
-   image(uj,400,340-(avg(a,SIZE)),100,145.7);
+   image(uj,400,340-(avg(d,SIZE)),100,145.7);
    tint(100,0,100,100-100*(avg(b,SIZE)/60));
-   image(krakow,550,330-(avg(b,SIZE)),100,154);
+   image(krakow,550,330-(avg(c,SIZE)),100,154);
    tint(100,0,100,100-100*(avg(c,SIZE)/60));
-   image(hspng,700,330-(avg(c,SIZE)),100,100);
+   image(hspng,700,330-(avg(b,SIZE)),100,100);
    tint(100,0,100,100-100*(avg(d,SIZE)/60));
-   image(mol,850,330-(avg(d,SIZE)),100,138.9);
+   image(mol,850,330-(avg(a,SIZE)),100,138.9);
    
    }
   }
