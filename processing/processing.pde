@@ -161,18 +161,22 @@ void draw()
    drawColumn(d,SIZE,1);
    
    waveA.setAmplitude( makeAmplitude(a,SIZE) );
+   waveA.setFrequency( frequencies[0] + 300 * makeAmplitude(a,SIZE)); 
    waveB.setAmplitude( makeAmplitude(b,SIZE) );
+   waveB.setFrequency( frequencies[1] + 300 * makeAmplitude(b,SIZE));
    waveC.setAmplitude( makeAmplitude(c,SIZE) );
+   waveC.setFrequency( frequencies[2] + 300 * makeAmplitude(c,SIZE));
    waveD.setAmplitude( makeAmplitude(d,SIZE) );
+   waveD.setFrequency( frequencies[3] + 300 * makeAmplitude(d,SIZE));
    
    tint(100,0,100,100-100*(avg(a,SIZE)/60));
-   image(uj,400,340-(avg(d,SIZE)),100,145.7);
+   image(uj,400,340-(avg(a,SIZE)),100,145.7);
    tint(100,0,100,100-100*(avg(b,SIZE)/60));
-   image(krakow,550,330-(avg(c,SIZE)),100,154);
+   image(krakow,550,330-(avg(b,SIZE)),100,154);
    tint(100,0,100,100-100*(avg(c,SIZE)/60));
-   image(hspng,700,330-(avg(b,SIZE)),100,100);
+   image(hspng,700,330-(avg(c,SIZE)),100,100);
    tint(100,0,100,100-100*(avg(d,SIZE)/60));
-   image(mol,850,330-(avg(a,SIZE)),100,138.9);
+   image(mol,850,330-(avg(d,SIZE)),100,138.9);
    
    }
   }
