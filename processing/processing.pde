@@ -72,7 +72,7 @@ void drawColumn(int array[], int size, int index)
 
 }
 
-float makeAmplitude(int array[], int size)
+float makeValue(int array[], int size)
 {
   float value = avg(array,SIZE);
   if(value < 60)
@@ -160,14 +160,14 @@ void draw()
    drawColumn(c,SIZE,2);
    drawColumn(d,SIZE,1);
    
-   waveA.setAmplitude( makeAmplitude(a,SIZE) );
-   waveA.setFrequency( frequencies[0] + 300 * makeAmplitude(a,SIZE)); 
-   waveB.setAmplitude( makeAmplitude(b,SIZE) );
-   waveB.setFrequency( frequencies[1] + 300 * makeAmplitude(b,SIZE));
-   waveC.setAmplitude( makeAmplitude(c,SIZE) );
-   waveC.setFrequency( frequencies[2] + 300 * makeAmplitude(c,SIZE));
-   waveD.setAmplitude( makeAmplitude(d,SIZE) );
-   waveD.setFrequency( frequencies[3] + 300 * makeAmplitude(d,SIZE));
+   waveA.setAmplitude( makeValue(a,SIZE) );
+   waveA.setFrequency( frequencies[0] + 300 * makeValue(a,SIZE)); 
+   waveB.setAmplitude( makeValue(b,SIZE) );
+   waveB.setFrequency( frequencies[1] + 300 * makeValue(b,SIZE));
+   waveC.setAmplitude( makeValue(c,SIZE) );
+   waveC.setFrequency( frequencies[2] + 300 * makeValue(c,SIZE));
+   waveD.setAmplitude( makeValue(d,SIZE) );
+   waveD.setFrequency( frequencies[3] + 300 * makeValue(d,SIZE));
    
    tint(100,0,100,100-100*(avg(a,SIZE)/60));
    image(uj,400,340-(avg(a,SIZE)),100,145.7);
